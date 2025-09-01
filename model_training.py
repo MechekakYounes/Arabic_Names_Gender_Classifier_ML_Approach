@@ -36,16 +36,15 @@ def normalize_name(name):
 
     return name
 
-
 # Load the mapping file and normalize names
 mapping_df = pd.read_excel("mapping_file.xlsx")
 mapping_df["Name"] = mapping_df["Name"].apply(normalize_name)
+
 #unifying the gender labels and remving any leading/trailing spaces 
 mapping_df["Gender"] = mapping_df["Gender"].str.strip().str.lower()
 mapping_df = mapping_df.dropna(subset=["Gender"])
 
-
-
+# Prepare features and labels
 X_names = mapping_df["Name"]
 y_labels = mapping_df["Gender"]
 

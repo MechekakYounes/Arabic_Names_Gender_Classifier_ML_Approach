@@ -21,4 +21,4 @@ model = joblib.load("gender_model_enhanced.pkl")
 vectorizer = joblib.load("vectorizer_enhanced.pkl")
 
 
-print(predict_gender("يونس"))  # Example usage
+print(predict_gender("فاطمة"))  # Example usage

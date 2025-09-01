@@ -4,9 +4,9 @@ import pandas as pd
 # Load your dataset
 df = pd.read_excel("empty_gender_name_liste.xlsx")
 
-# Apply predict_gender safely
+# Apply predict_gender safely making the names to the right format to predict its gender
 def safe_predict(name):
-    if pd.isna(name):  # Skip empty cells
+    if pd.isna(name):  
         return None
     name = str(name).strip()  # Ensure it's a string
     if not name:  # Skip if it's empty after stripping
